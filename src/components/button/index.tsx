@@ -8,7 +8,7 @@ const buttonstyle = cva('rounded', {
   },
   variants: {
     size: {
-      md: 'py-2 px-4',
+      md: 'p-4',
       sm: 'p-2',
     },
     variants: {

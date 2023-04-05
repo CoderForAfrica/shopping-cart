@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Button } from '@ui/buttons';
+import { Button } from '@ui/button';
 import Head from 'next/head';
 import { Layout } from 'src/layouts';
 
@@ -14,10 +14,11 @@ const Home: NextPageWithLayout = () => {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link href="/favicon.ico" rel="icon" />
       </Head>
-      <main className="container  mx-auto h-60 bg-gray-50">
-        <h1>Tailwindcss, nextjs, typescript && class-variance-authority</h1>
-        <Button size="sm">Submit</Button>
-        <Button size="md">Submit</Button>
+      <main className="bg-gray-50">
+        <div className="container mx-auto space-x-2">
+          <Button variants="secondary">Submit</Button>
+          <Button size="md">Submit</Button>
+        </div>
       </main>
     </>
   );
