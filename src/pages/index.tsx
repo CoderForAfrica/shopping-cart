@@ -19,7 +19,7 @@ const Home: NextPageWithLayout = () => {
         <div className="container mx-auto space-x-2">
           <Button variants="secondary">Submit</Button>
           <Button size="md">Submit</Button>
-          <ButtonTwo block={true} size="sm" varant="success">
+          <ButtonTwo block={true} size="sm" variant="success">
             Validate
           </ButtonTwo>
         </div>
