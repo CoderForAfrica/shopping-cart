@@ -16,13 +16,11 @@ const Home: NextPageWithLayout = () => {
         <link href="/favicon.ico" rel="icon" />
       </Head>
       <main className="bg-gray-50">
-       <LoginComponent />
+        <LoginComponent />
       </main>
     </>
   );
 };
-
-
 
 Home.getLayout = (page: ReactElement) => <Layout>{page}</Layout>;
 

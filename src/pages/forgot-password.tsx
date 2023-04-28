@@ -1,25 +1,20 @@
 import { useState } from 'react';
-import {resetPassword } from '@ui/api/forgotPassword'
+import { resetPassword } from '@ui/api/forgotPassword';
 import { ButtonTwo } from '@ui/btn/btn';
 import { Input } from '@ui/input/input';
 
-
 type FormValues = {
-  email:string
-}
+  email: string;
+};
 
 const ForgetPassword = () => {
-  const [emailData, setEmailData] =useState<FormValues>(
-    { email: ''}
-  );
+  const [emailData, setEmailData] = useState<FormValues>({ email: '' });
 
- 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    await resetPassword(emailData.email)
+    await resetPassword(emailData.email);
   };
-
 
   return (
     <div className=" h-full w-full">
@@ -28,14 +23,16 @@ const ForgetPassword = () => {
         onSubmit={handleSubmit}
       >
         <div className="w-34">
-          <Input 
-            label='Email'
-            name='email'
-            onChange={(e) => setEmailData({ ...emailData, email: e.target.value})}
-            type='email'
+          <Input
+            label="Email"
+            name="email"
+            onChange={(e) =>
+              setEmailData({ ...emailData, email: e.target.value })
+            }
+            type="email"
             value={emailData.email}
           />
-          
+
           <ButtonTwo size="md" variant="secondary">
             Submit
           </ButtonTwo>

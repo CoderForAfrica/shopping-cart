@@ -12,7 +12,7 @@ const inputStyle = cva(
     defaultVariants: { error: false, intent: 'primary' },
     variants: {
       error: {
-        true: 'border-red-600 !important'
+        true: 'border-red-600 !important',
       },
       intent: {
         primary: 'border-brand bg-brand-accent50/5',
@@ -29,7 +29,6 @@ type Props = VariantProps<typeof inputStyle> &
     label?: string;
   };
 
-
 export const Input = forwardRef<HTMLInputElement, Props>(
   (
     {
@@ -44,12 +43,10 @@ export const Input = forwardRef<HTMLInputElement, Props>(
     },
     ref
   ) => {
-   
-
     return (
       <div>
         {label && <label>{label}</label>}
-        <div className={inputStyle({ className, error, intent, })}>
+        <div className={inputStyle({ className, error, intent })}>
           {LeftIcon && (
             <div className="bg-brand-accent50/20 flex h-full w-12 items-center justify-center">
               <LeftIcon className="h-5 w-5" />
@@ -66,10 +63,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
             </div>
           )}
         </div>
-         {
-         errormessage
-          && <p className="text-xs text-rose-700">{error}</p> 
-          }
+        {errormessage && <p className="text-xs text-rose-700">{error}</p>}
       </div>
     );
   }
