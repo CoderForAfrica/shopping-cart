@@ -2,7 +2,6 @@ import React, {
   DetailedHTMLProps,
   forwardRef,
   InputHTMLAttributes,
-  useState,
 } from 'react';
 import { IconType } from 'react-icons';
 import { cva, VariantProps } from 'class-variance-authority';
@@ -10,8 +9,11 @@ import { cva, VariantProps } from 'class-variance-authority';
 const inputStyle = cva(
   'h-12 rounded w-full border focus-within:border-blue-400 transition-all flex items-center overflow-hidden',
   {
-    defaultVariants: { intent: 'primary' },
+    defaultVariants: { error: false, intent: 'primary' },
     variants: {
+      error: {
+        true: 'border-red-600 !important'
+      },
       intent: {
         primary: 'border-brand bg-brand-accent50/5',
       },
@@ -22,44 +24,40 @@ const inputStyle = cva(
 type Props = VariantProps<typeof inputStyle> &
   DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> & {
     LeftIcon?: IconType;
-    error?: string;
+    errormessage?: string;
     RightIcon?: IconType;
     label?: string;
   };
+
 
 export const Input = forwardRef<HTMLInputElement, Props>(
   (
     {
       className,
       error,
+      errormessage,
       intent,
       label,
       LeftIcon,
-      onChange,
       RightIcon,
       ...props
     },
     ref
   ) => {
-    const [message, setMessage] = useState('');
-
-    const handleChange = (event: React.ChangeEvent<any>) => {
-      setMessage(event.target.value);
-    };
+   
 
     return (
       <div>
         {label && <label>{label}</label>}
-        <div className={inputStyle({ className, intent })}>
+        <div className={inputStyle({ className, error, intent, })}>
           {LeftIcon && (
             <div className="bg-brand-accent50/20 flex h-full w-12 items-center justify-center">
               <LeftIcon className="h-5 w-5" />
             </div>
           )}
           <input
-            className="h-full w-full border-0 bg-transparent px-2 text-sm outline-0 placeholder:text-sm "
+            className="h-full w-full border-0 bg-transparent px-2 text-sm outline-0 placeholder:text-sm"
             {...props}
-            onChange={handleChange}
             ref={ref}
           />
           {RightIcon && (
@@ -68,9 +66,10 @@ export const Input = forwardRef<HTMLInputElement, Props>(
             </div>
           )}
         </div>
-        {message.length > 0
-          ? error && <p className="text-xs text-rose-700">{error}</p>
-          : ''}
+         {
+         errormessage
+          && <p className="text-xs text-rose-700">{error}</p> 
+          }
       </div>
     );
   }
