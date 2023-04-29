@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { resetPassword } from '@ui/api/forgotPassword';
 import { ButtonTwo } from '@ui/btn/btn';
 import { Input } from '@ui/input/input';
+import { resetPassword } from 'src/api/forgotPassword';
 
 type FormValues = {
   email: string;

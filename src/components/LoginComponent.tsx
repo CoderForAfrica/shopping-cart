@@ -5,7 +5,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { API } from './constant';
+import { API } from '../constant/constant';
 
 type FormValues = {
   email: string;

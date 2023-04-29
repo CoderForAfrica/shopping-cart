@@ -1,5 +1,5 @@
-import { RESET_ENDPOINT } from '@ui/constant';
 import axios from 'axios';
+import { RESET_ENDPOINT } from 'src/constant/constant';
 
 type FormValues = {
   password: string;

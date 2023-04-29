@@ -1,4 +1,4 @@
-import { API } from '@ui/constant';
+import { API } from 'src/constant/constant';
 import axios from 'axios';
 
 type UserProps = {

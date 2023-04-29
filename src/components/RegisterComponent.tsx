@@ -3,7 +3,7 @@ import { ButtonTwo } from '@ui/btn/btn';
 import { Input } from '@ui/input/input';
 import { useRouter } from 'next/router';
 
-import { registerUser } from './api/register';
+import { registerUser } from '../api/register';
 
 type FormValues = {
   username: string;

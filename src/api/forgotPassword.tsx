@@ -1,4 +1,4 @@
-import { FORGOT_ENDPOINT } from '@ui/constant';
+import { FORGOT_ENDPOINT } from 'src/constant/constant';
 import axios from 'axios';
 
 export const resetPassword = async (email: string) => {

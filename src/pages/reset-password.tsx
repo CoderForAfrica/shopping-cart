@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { updatePassword } from '@ui/api/resetPassword';
 import { ButtonTwo } from '@ui/btn/btn';
 import { Input } from '@ui/input/input';
 import { useRouter } from 'next/router';
+import { updatePassword } from 'src/api/resetPassword';
 
 type FormValues = {
   password: string;
