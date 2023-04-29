@@ -1,8 +1,8 @@
-import { ReactElement } from 'react';
-import { ButtonTwo } from '@ui/btn/btn';
-import { Button } from '@ui/button';
+import { ReactElement, useState } from 'react';
 import Head from 'next/head';
 import { Layout } from 'src/layouts';
+
+import LoginComponent from '../components/LoginComponent';
 
 import { NextPageWithLayout } from './_app';
 
@@ -16,13 +16,7 @@ const Home: NextPageWithLayout = () => {
         <link href="/favicon.ico" rel="icon" />
       </Head>
       <main className="bg-gray-50">
-        <div className="container mx-auto space-x-2">
-          <Button variants="secondary">Submit</Button>
-          <Button size="md">Submit</Button>
-          <ButtonTwo block={true} size="sm" varant="success">
-            Validate
-          </ButtonTwo>
-        </div>
+        <LoginComponent />
       </main>
     </>
   );

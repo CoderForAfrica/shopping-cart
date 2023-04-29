@@ -5,7 +5,7 @@ const buttonstyle = cva('rounded hover:scale-90 ease-in duration-300', {
   defaultVariants: {
     block: false,
     size: 'sm',
-    varant: 'primary',
+    variant: 'primary',
   },
   variants: {
     block: {
@@ -16,7 +16,7 @@ const buttonstyle = cva('rounded hover:scale-90 ease-in duration-300', {
       md: 'p-4',
       sm: 'p-2',
     },
-    varant: {
+    variant: {
       error: 'text-white bg-[#ff0000]',
       primary: 'text-white bg-[#111C55]',
       secondary: 'text-[#111C55] bg-[#FFB629]',
@@ -31,12 +31,12 @@ type Props = VariantProps<typeof buttonstyle> &
 export const ButtonTwo = ({
   block,
   size,
-  varant,
+  variant,
   className,
   children,
   ...rest
 }: Props) => {
-  const style = buttonstyle({ block, className, size, varant });
+  const style = buttonstyle({ block, className, size, variant });
   return (
     <button className={style} {...rest}>
       {children}
