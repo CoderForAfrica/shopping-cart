@@ -1,5 +1,5 @@
-import { API } from 'src/constant/constant';
 import axios from 'axios';
+import { API } from 'src/constant/constant';
 
 type UserProps = {
   username: string;
